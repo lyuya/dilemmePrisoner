@@ -4,7 +4,7 @@ public class StrategieDonnantDonnantAvecSeuil extends StrategieComplexe {
 
 	@Override
 	public String getName() {
-		return "DonnantDonnantAvecSeuilLP";
+		return "DonnantDonnantAvecSeuil";
 	}
 
 	@Override

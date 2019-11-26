@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
 import Strategie.Choix;
-import Strategie.StrategieMajoriteDur;
 import Strategie.StrategieMajoriteMou;
 
 public class StrategieMajoriteMouTest {

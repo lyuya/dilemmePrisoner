@@ -6,7 +6,7 @@ public class StrategieDonnantDonnantDur extends StrategieComplexe{
 
 	@Override
 	public String getName() {
-		return "DonnantDonnantDurLP";
+		return "DonnantDonnantDur";
 	}
 
 	@Override

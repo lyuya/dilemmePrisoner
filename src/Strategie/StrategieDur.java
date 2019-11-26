@@ -12,7 +12,7 @@ public class StrategieDur extends StrategieComplexe {
 	public Choix getNextChoix(Choix dernierChoixAdv) {
 		Choix choixActuel;
 		if (dernierChoixAdv == null) {
-			choixActuel = Choix.C;
+			choixActuel = Choix.T;
 			this.addHistoryChoix(choixActuel);
 		} else {
 			if (dernierChoixAdv.equals(Choix.T)) {
@@ -20,7 +20,7 @@ public class StrategieDur extends StrategieComplexe {
 			} else if (dernierChoixAdv.equals(Choix.C)) {
 				choixActuel = Choix.T;
 			} else {
-				choixActuel = Choix.C;
+				choixActuel = Choix.T;
 			}
 			this.updateHistory(choixActuel, dernierChoixAdv);
 		}
