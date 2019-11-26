@@ -15,7 +15,7 @@ public class StrategieDur extends StrategieComplexe {
 			choixActuel = Choix.C;
 			this.addHistoryChoix(choixActuel);
 		} else {
-			if (this.getHistoryChoixAdv().contains(Choix.T)) {
+			if (dernierChoixAdv.equals(Choix.T)) {
 				choixActuel = Choix.N;
 			} else if (dernierChoixAdv.equals(Choix.C)) {
 				choixActuel = Choix.T;

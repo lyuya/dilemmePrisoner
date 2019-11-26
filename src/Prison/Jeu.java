@@ -24,8 +24,8 @@ public class Jeu {
 	public static void main(String[] args) throws InstantiationException, IllegalAccessException, NombreStrategiesException{
 		Strategie sts[] = new Strategie[2];
 		sts[0] = new StrategiePeriodiqueGentille();
-		sts[1] = new StrategieGraineDeChampion();
-//		sts[1] = new StrategieDonnantDonnantAvecSeuil();
+//		sts[1] = new StrategieGraineDeChampion();
+		sts[1] = new StrategieDonnantDonnantDur();
 //		sts[1] = new StrategieGentille();
 //		sts[2] = new Mechante();
 //		sts[3] = new Gentille();

@@ -2,3 +2,8 @@ Changes CR4:
 1. ajouter les tests unitaire pour les methodes functionnels;
 2. ajouter une package de exception pour gerer les exceptions
 3. deplacer la procedure d'enregistrement d'history dans certaine strategie concrete de classe rencontre;
+
+Changes CR4:
+1. Ajouter tous les strategies
+2. Ajouter les tests unitaire de ces strategies
+3. Ajouter une calculatrice singleton

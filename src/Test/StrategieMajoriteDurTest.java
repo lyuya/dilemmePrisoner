@@ -1,5 +1,48 @@
 package Test;
 
-public class StrategieMajoriteDurTest {
+import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
 
+import Strategie.Choix;
+import Strategie.StrategieMajoriteDur;
+import Strategie.StrategieRancuniere;
+
+public class StrategieMajoriteDurTest {
+	@Test
+	public void testGetName() {
+		StrategieMajoriteDur s = new StrategieMajoriteDur();
+		Assertions.assertEquals("Majorité-Dur", s.getName());
+		Assertions.assertEquals("Majorité-Dur", s.getName());
+	}
+	
+	@Test
+	public void testGetNextChoixPremierTour() {
+		StrategieMajoriteDur s = new StrategieMajoriteDur();
+		Assertions.assertEquals(Choix.T, s.getNextChoix(null));
+		Assertions.assertEquals(Choix.T, s.getNextChoix(null));
+	}
+	
+	@Test
+	public void testGetNextChoixAdvTC() {
+		StrategieMajoriteDur s = new StrategieMajoriteDur();
+		s.addHistoryChoixAdv(Choix.C);
+		s.addHistoryChoixAdv(Choix.T);
+		s.addHistoryChoixAdv(Choix.T);
+		s.addHistoryChoixAdv(Choix.C);
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.C));
+		Assertions.assertEquals(Choix.C, s.getNextChoix(Choix.C));
+	}
+	
+	@Test
+	public void testGetNextChoixAdvT() {
+		StrategieMajoriteDur s = new StrategieMajoriteDur();
+		s.addHistoryChoixAdv(Choix.T);
+		s.addHistoryChoixAdv(Choix.T);
+		s.addHistoryChoixAdv(Choix.N);
+		s.addHistoryChoixAdv(Choix.N);
+		s.addHistoryChoixAdv(Choix.N);
+		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.T));
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.C));
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.C));
+	}
 }

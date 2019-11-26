@@ -11,7 +11,7 @@ public class StrategieMajoriteMou extends StrategieComplexe {
 	public Choix getNextChoix(Choix dernierChoixAdv) {
 		Choix choixActuel;
 		if (dernierChoixAdv == null) {
-			choixActuel = Choix.T;
+			choixActuel = Choix.C;
 			this.addHistoryChoix(choixActuel);
 		} else {
 			int countC = 0;

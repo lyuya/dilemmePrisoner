@@ -3,7 +3,7 @@ package Strategie;
 public class StrategieDonnantDonnant extends StrategieComplexe {
 	@Override
 	public String getName() {
-		return "Donnant-Donnant";
+		return "Donnant-DonnantLP";
 	}
 	@Override
 	public Choix getNextChoix(Choix dernierChoixAdv) {

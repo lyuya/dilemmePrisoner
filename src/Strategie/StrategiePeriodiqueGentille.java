@@ -20,7 +20,8 @@ public class StrategiePeriodiqueGentille extends StrategieComplexe {
 			} else {
 				choixActuel = Choix.C;
 			}
-			this.updateHistory(choixActuel, dernierChoixAdv);
+			// this.updateHistory(choixActuel, dernierChoixAdv);
+			this.addHistoryChoix(choixActuel);
 		}
 		return choixActuel;
 	}

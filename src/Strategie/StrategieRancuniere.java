@@ -14,7 +14,7 @@ public class StrategieRancuniere extends StrategieComplexe {
 			choixActuel = Choix.C;
 			this.addHistoryChoix(choixActuel);
 		} else {
-			if (this.getHistoryChoixAdv().contains(Choix.T)) {
+			if (this.getHistoryChoixAdv().contains(Choix.T) || dernierChoixAdv == Choix.T) {
 				choixActuel = Choix.T;
 			} else {
 				choixActuel = Choix.C;
