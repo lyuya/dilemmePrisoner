@@ -28,10 +28,17 @@ public class StrategieMajoriteDur extends StrategieComplexe {
 					countN++;
 				}
 			}
-			System.out.println("countC" + countC);
-			System.out.println("countT" + countT);
-			System.out.println("countN" + countN);
-
+			switch (dernierChoixAdv) {
+			case C:
+				countC++;
+				break;
+			case T:
+				countT++;
+				break;
+			case N:
+				countN++;
+				break;
+			}
 			if (countC > countT && countC > countN) {
 				choixActuel = Choix.C;
 			} else if (countT > countC && countT > countN) {

@@ -1,11 +1,6 @@
 package Strategie;
 
 public class PointCalculatrice {
-	private static final PointCalculatrice CALCULATRICE = new PointCalculatrice();
-	
-	public static PointCalculatrice getCalculatrice() {
-		return CALCULATRICE;
-	}
 
 	public static int getPoint(Choix s1, Choix s2) {
 		if (s1.equals(Choix.C) && s2.equals(Choix.T)) {

@@ -24,21 +24,17 @@ public class StrategieDonnantDonnantDurTest {
 	@Test
 	public void testGetNextChoixAdvTrahisDernierTour() {
 		StrategieDonnantDonnantDur s = new StrategieDonnantDonnantDur();
-		Choix c1 = Choix.C;
-		Choix c2 = Choix.T;
-		s.updateHistory(c1, c2);
-		Assertions.assertEquals(Choix.T, s.getNextChoix(c2));
-		Assertions.assertEquals(Choix.T, s.getNextChoix(c2));
+		s.getHistoryChoixAdv().add(Choix.T);
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.T));
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.T));
 	}
 	@Test
 	public void testGetNextChoixAdvTrahisDernier2Tour() {
 		StrategieDonnantDonnantDur s = new StrategieDonnantDonnantDur();
-		Choix c1 = Choix.C;
-		Choix c2 = Choix.T;
-		s.updateHistory(c1, c1);
-		s.updateHistory(c1, c2);
-		Assertions.assertEquals(Choix.T, s.getNextChoix(c2));
-		Assertions.assertEquals(Choix.T, s.getNextChoix(c2));
+		s.getHistoryChoixAdv().add(Choix.T);
+		s.getHistoryChoixAdv().add(Choix.C);
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.T));
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.T));
 	}
 	@Test
 	public void testGetNextChoixAdvTrahisJamais() {

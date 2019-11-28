@@ -24,7 +24,6 @@ public class StrategieDonnantDonnantAvecSeuilTest {
 		s.updateHistory(c1, c2);
 		s.updateHistory(c1, c2);
 		s.updateHistory(c1, c2);
-		s.updateHistory(c1, c2);
 		Assertions.assertEquals(Choix.N, s.getNextChoix(c1));
 		s.updateHistory(c2, c2);
 		s.updateHistory(c2, c2);
@@ -52,6 +51,7 @@ public class StrategieDonnantDonnantAvecSeuilTest {
 	}
 	
 	@Test
+	// Renoncer est definitif
 	public void testGetNextChoixRenoncePuisNonRenonce() {
 		StrategieDonnantDonnantAvecSeuil s = new StrategieDonnantDonnantAvecSeuil();
 		Choix c1 = Choix.C;
@@ -61,12 +61,8 @@ public class StrategieDonnantDonnantAvecSeuilTest {
 		s.updateHistory(c1, c2);
 		s.updateHistory(c1, c2);
 		s.updateHistory(c1, c2);
-		s.updateHistory(c1, c2);
 		Assertions.assertEquals(Choix.N, s.getNextChoix(c1));
-		s.updateHistory(c2, c2);
-		s.updateHistory(c2, c2);
-		s.updateHistory(c2, c1);
-		s.updateHistory(c2, c1);
-		Assertions.assertEquals(c1, s.getNextChoix(c1));
-	}
+		Assertions.assertEquals(Choix.N, s.getNextChoix(c2));
+		Assertions.assertEquals(Choix.N, s.getNextChoix(c2));
+	}	
 }

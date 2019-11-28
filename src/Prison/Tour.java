@@ -2,12 +2,11 @@ package Prison;
 
 import Strategie.Choix;
 import Strategie.PointCalculatrice;
-import exception.EnumChoixNullException;
 
 public class Tour {
 
 	private int scoreJoueur1;
-	public Tour(Choix c1, Choix c2) throws EnumChoixNullException{
+	public Tour(Choix c1, Choix c2) {
 		this.setScoreJoueur1(PointCalculatrice.getPoint(c1, c2));
 	}
 	

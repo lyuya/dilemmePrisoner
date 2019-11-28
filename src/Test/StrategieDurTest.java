@@ -15,15 +15,17 @@ public class StrategieDurTest {
 	}
 	@Test
 	public void testGetNextChoixPremierTour() {
-		StrategieMajoriteDur s = new StrategieMajoriteDur();
-		Assertions.assertEquals(Choix.T, s.getNextChoix(null));
-		Assertions.assertEquals(Choix.T, s.getNextChoix(null));
-		Assertions.assertEquals(Choix.T, s.getHistoryChoix().get(0));
-		Assertions.assertEquals(Choix.T, s.getHistoryChoix().get(0));
+		StrategieDur s = new StrategieDur();
+		Assertions.assertEquals(Choix.C, s.getNextChoix(null));
+		Assertions.assertEquals(Choix.C, s.getNextChoix(null));
+		Assertions.assertEquals(Choix.C, s.getHistoryChoix().get(0));
+		Assertions.assertEquals(Choix.C, s.getHistoryChoix().get(0));
 	}
 	@Test
 	public void testGetNextChoixAdvC() {
 		StrategieDur s = new StrategieDur();
+		// commence le premier tour
+		s.getNextChoix(null);
 		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.C));
 		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.C));
 	}
@@ -31,6 +33,7 @@ public class StrategieDurTest {
 	@Test
 	public void testGetNextChoixAdvT() {
 		StrategieDur s = new StrategieDur();
+		s.getNextChoix(null);
 		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.T));
 		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.T));
 	}
@@ -38,7 +41,18 @@ public class StrategieDurTest {
 	@Test
 	public void testGetNextChoixAdvN() {
 		StrategieDur s = new StrategieDur();
-		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.N));
-		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.N));
+		s.getNextChoix(null);
+		Assertions.assertEquals(Choix.C, s.getNextChoix(Choix.N));
+		Assertions.assertEquals(Choix.C, s.getNextChoix(Choix.N));
+	}
+	
+	@Test
+	public void testGetNextChoixRenonceDefinitif() {
+		StrategieDur s = new StrategieDur();
+		s.getNextChoix(null);
+		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.T));
+		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.C));
+		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.C));
+		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.N));
 	}
 }

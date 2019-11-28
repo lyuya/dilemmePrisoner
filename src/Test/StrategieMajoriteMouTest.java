@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
 import Strategie.Choix;
+import Strategie.StrategieMajoriteDur;
 import Strategie.StrategieMajoriteMou;
 
 public class StrategieMajoriteMouTest {
@@ -22,18 +23,28 @@ public class StrategieMajoriteMouTest {
 	}
 	
 	@Test
-	public void testGetNextChoixAdvTC() {
-		StrategieMajoriteMou s = new StrategieMajoriteMou();
+	public void testGetNextChoixEgal() {
+		StrategieMajoriteDur s = new StrategieMajoriteDur();
 		s.addHistoryChoixAdv(Choix.C);
 		s.addHistoryChoixAdv(Choix.T);
 		s.addHistoryChoixAdv(Choix.T);
-		s.addHistoryChoixAdv(Choix.C);
-		Assertions.assertEquals(Choix.C, s.getNextChoix(Choix.C));
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.C));
 		Assertions.assertEquals(Choix.C, s.getNextChoix(Choix.C));
 	}
 	
 	@Test
-	public void testGetNextChoixAdvT() {
+	public void testGetNextChoixMajT() {
+		StrategieMajoriteMou s = new StrategieMajoriteMou();
+		s.addHistoryChoixAdv(Choix.C);
+		s.addHistoryChoixAdv(Choix.T);
+		s.addHistoryChoixAdv(Choix.T);
+		s.addHistoryChoixAdv(Choix.C);
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.T));
+		Assertions.assertEquals(Choix.T, s.getNextChoix(Choix.T));
+	}
+	
+	@Test
+	public void testGetNextChoixMajC() {
 		StrategieMajoriteMou s = new StrategieMajoriteMou();
 		s.addHistoryChoixAdv(Choix.T);
 		s.addHistoryChoixAdv(Choix.T);
@@ -43,9 +54,21 @@ public class StrategieMajoriteMouTest {
 		s.addHistoryChoixAdv(Choix.C);
 		s.addHistoryChoixAdv(Choix.C);
 		s.addHistoryChoixAdv(Choix.C);
-		Assertions.assertEquals(Choix.C, s.getNextChoix(Choix.N));
-		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.T));
-		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.C));
 		Assertions.assertEquals(Choix.C, s.getNextChoix(Choix.C));
+		Assertions.assertEquals(Choix.C, s.getNextChoix(Choix.T));
+	}
+	@Test
+	public void testGetNextChoixMajN() {
+		StrategieMajoriteMou s = new StrategieMajoriteMou();
+		s.addHistoryChoixAdv(Choix.T);
+		s.addHistoryChoixAdv(Choix.T);
+		s.addHistoryChoixAdv(Choix.N);
+		s.addHistoryChoixAdv(Choix.N);
+		s.addHistoryChoixAdv(Choix.N);
+		s.addHistoryChoixAdv(Choix.C);
+		s.addHistoryChoixAdv(Choix.C);
+		s.addHistoryChoixAdv(Choix.C);
+		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.N));
+		Assertions.assertEquals(Choix.N, s.getNextChoix(Choix.T));
 	}
 }

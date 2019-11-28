@@ -12,15 +12,20 @@ public class StrategieDur extends StrategieComplexe {
 	public Choix getNextChoix(Choix dernierChoixAdv) {
 		Choix choixActuel;
 		if (dernierChoixAdv == null) {
-			choixActuel = Choix.T;
+			choixActuel = Choix.C;
 			this.addHistoryChoix(choixActuel);
 		} else {
-			if (dernierChoixAdv.equals(Choix.T)) {
+			int sizeRes = this.getHistoryPoint().size();
+			Choix dernierChoix = this.getHistoryChoix().get(sizeRes);
+			if (dernierChoix == Choix.N) {
+				choixActuel = Choix.N;
+			}
+			else if (dernierChoixAdv.equals(Choix.T)) {
 				choixActuel = Choix.N;
 			} else if (dernierChoixAdv.equals(Choix.C)) {
 				choixActuel = Choix.T;
 			} else {
-				choixActuel = Choix.T;
+				choixActuel = Choix.C;
 			}
 			this.updateHistory(choixActuel, dernierChoixAdv);
 		}

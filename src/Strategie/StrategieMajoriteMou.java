@@ -28,11 +28,22 @@ public class StrategieMajoriteMou extends StrategieComplexe {
 					countN++;
 				}
 			}
+			switch (dernierChoixAdv) {
+			case C:
+				countC++;
+				break;
+			case T:
+				countT++;
+				break;
+			case N:
+				countN++;
+				break;
+			}
 			if (countC > countT && countC > countN) {
 				choixActuel = Choix.C;
 			} else if (countT > countC && countT > countN) {
 				choixActuel = Choix.T;
-			}else if (countN > countC && countN > countT) {
+			} else if (countN > countC && countN > countT) {
 				choixActuel = Choix.N;
 			} else {
 				choixActuel = Choix.C;
