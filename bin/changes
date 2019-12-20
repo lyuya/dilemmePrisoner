@@ -3,7 +3,17 @@ Changes CR4:
 2. ajouter une package de exception pour gerer les exceptions
 3. deplacer la procedure d'enregistrement d'history dans certaine strategie concrete de classe rencontre;
 
-Changes CR4:
+Changes CR5:
 1. Ajouter tous les strategies
 2. Ajouter les tests unitaire de ces strategies
 3. Ajouter une calculatrice singleton
+
+Changes CR6:
+1. Deplacer des fichiers de test dans un dossier src
+2. Creer une IHM avec input d'utilisateur
+3. Adapter le patron factory dans la fonctionalite "creer les strategies"
+4. Adapter le patron command quand on execute les fonctionalites du menu
+	(definir nombre tour, choisir strategies, quitter le jeu, etc) 
+5. Adapter le patron observer quand une rencontre a fini, le tournoi va faire un mise a jour dans le resultat.
+6. Ajouter un menu principale pour utilisateur
+7. Ajouter une classe "Jeu" et elle est appele par la classe"JeuDemo" pour mieux decouper les fontionalites

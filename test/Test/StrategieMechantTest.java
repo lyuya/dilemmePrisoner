@@ -9,8 +9,8 @@ public class StrategieMechantTest {
 	@Test
 	public void testGetName() {
 		StrategieMechante s = new StrategieMechante();
-		Assertions.assertEquals("MyMechante", s.getName());
-		Assertions.assertEquals("MyMechante", s.getName());
+		Assertions.assertEquals("Mechante", s.getName());
+		Assertions.assertEquals("Mechante", s.getName());
 	}
 	@Test
 	public void testGetNextChoix() {

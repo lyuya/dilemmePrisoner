@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import Strategie.Choix;
 import Strategie.StrategieDur;
-import Strategie.StrategieMajoriteDur;
 
 public class StrategieDurTest {
 	@Test

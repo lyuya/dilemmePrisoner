@@ -1,5 +1,4 @@
 package Prison;
-
 import Strategie.Choix;
 import Strategie.PointCalculatrice;
 

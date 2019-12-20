@@ -10,8 +10,8 @@ public class StrategieGentilleTest {
 	@Test
 	public void testGetName() {
 		StrategieGentille s = new StrategieGentille();
-		Assertions.assertEquals("MyGentille", s.getName());
-		Assertions.assertEquals("MyGentille", s.getName());
+		Assertions.assertEquals("Gentille", s.getName());
+		Assertions.assertEquals("Gentille", s.getName());
 	}
 	@Test
 	public void testGetNextChoixNul() {

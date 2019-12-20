@@ -4,7 +4,7 @@ public class StrategieMechante implements Strategie {
 
 	@Override
 	public String getName() {
-		return "MyMechante";
+		return "Mechante";
 	}
 
 	@Override
