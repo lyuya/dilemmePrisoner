@@ -1,3 +1,3 @@
 # dilemmePrisoner
 
-#### Ce projet est désigné par le cours <Patron et composant> de M1 MIAGE.
+#### Ce projet est destiné au cours "Patron et composant" de M1 MIAGE.
